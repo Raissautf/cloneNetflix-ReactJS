@@ -1,0 +1,62 @@
+.movieRow {
+    margin-bottom: 30px;
+}
+.movieRow h2 {
+    margin: 0px 0px 0px 30px; 
+}
+.movieRow--listarea {
+    overflow-x: hidden; /* TUDO QUE PASSAR DA FORMA HORIZONTAL DA TELA, SERÁ CORTADO  */
+    padding-left: 30px; /* alinhar com o titulo */
+}
+.movieRow--list {
+    transition: all ease 0.5s ;
+}
+
+.movieRow--item {
+    display: inline-block; /* O ITEM FICA AO LADO DO OUTRO  */
+    width: 150px; /* largura de cada filme */
+    cursor: pointer; /*  é clicavel */
+
+}
+.movieRow--item img{
+    width: 100%;
+    transform: scale(0.9); /* (separar um film do outro) a img vai ter 100% mas o css vai ser proporcionamente diminuido p ficar 90%*/
+    transition: all ease 0.2s; /* velocidade da animação ao passar o mouse */
+}
+.movieRow--item img:hover{ /* animação com img (ao passar o mouse) */
+    transform: scale(1);
+}
+.movieRow--left, 
+.movieRow--right {
+    position: absolute; /*  flutuando */
+    width: 40px; /* largura */
+    height: 225px; /*  altura de uma imagem quando estiver aberta */
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 99; /*  por cima dos cards : lembrando se for maior que 99, fica por cima do header tb*/
+    display: flex; /*  é adicionado, os elementos ficam em linha, um do lado do outro. */
+    align-items: center; /*  alinhando os icones */
+    justify-content: center;
+    overflow: hidden ; /*  nao vai deixar o espaço extra do icon atrapalhar a pagina inteira */
+    cursor: pointer; /*  é clicavel */
+    opacity: 0; /*  icone aparecer só quando quiser */
+    transition: all ease 0.5s;
+}
+.movieRow--left {
+    left: 0;
+}
+
+.movieRow--right {
+    right: 0;
+}
+.movieRow:hover .movieRow--left,
+.movieRow:hover .movieRow--right {
+    opacity: 1; /* aparecer icone quando estiver no movieRow */
+   
+}
+@media (max-width:760px) { /* para celular */
+    .movieRow--left,  /* mostrar sempre a seta */
+    .movieRow--right {
+        opacity: 1;
+    }
+}
+

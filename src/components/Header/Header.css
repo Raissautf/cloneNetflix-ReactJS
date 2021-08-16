@@ -1,0 +1,31 @@
+header {
+    position: fixed;
+    z-index: 999; /*  ficar realmente em cima */
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;  /*  UM ITEM FICA NA ESQUERDA E OUTRO NA DIRETA */
+    align-items: center; /* CENTRALIZADO VERTICALMENTE */
+    padding: 0 30px;
+    background: transparent;
+    transition: all ease 0.5s;
+
+} /*  nao tome espaço da tela, n empurre o destaque p baixo */
+header.black { /*  class especial */
+    background-color: #141414;
+}
+.header--logo {
+    height: 25px;
+}
+.header--logo img {
+   height: 100%;
+}
+.header--user {
+    height: 35px;
+}
+.header--user img {
+    height: 100%; /*  pegando area disponivel */
+    border-radius: 3px;
+}
